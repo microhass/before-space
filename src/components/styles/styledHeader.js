@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Header = styled.header`
   background-color: #fff;
   padding: 1rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 1rem;
   border-bottom: 1px solid #efefef;
   display: flex;

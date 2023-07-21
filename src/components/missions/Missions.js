@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../../redux/missions/missionSlice';
 import { useEffect } from 'react';
 import SingleMission from './SingleMission';
+import classes from './missions.module.css'
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,10 @@ const Missions = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <section className='missions'>
-      <table border={1}>
+    <section className={classes.missions}>
+      <table className={classes.table}>
         <thead>
-          <tr>
+          <tr className={classes.tableRow}>
             <th>Mission</th>
             <th>Description</th>
             <th>Status</th>

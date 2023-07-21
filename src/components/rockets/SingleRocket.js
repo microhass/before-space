@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { rocketActions } from '../../redux/rockets/rocketSlice';
-import classes from './rocket.module.css'
+import classes from './rockets.module.css'
 
 const SingleRocket = ({ rocket }) => {
   const { id, name, description, testImage, reserved } = rocket;

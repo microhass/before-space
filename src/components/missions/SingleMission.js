@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { missionActions } from '../../redux/missions/missionSlice';
+import classes from './missions.module.css';
 
 const SingleMission = ({ mission }) => {
   const { id, name, description, isMember } = mission;
@@ -10,28 +11,36 @@ const SingleMission = ({ mission }) => {
   };
 
   return (
-    <tr>
+    <tr className={classes.tableRow}>
       <td>{name}</td>
-      <td>{description}</td>
+      <td className={classes.description}>{description}</td>
 
       {isMember ? (
         <>
-          <td>
-            <span className='badge'>active member</span>
+          <td className={classes.button}>
+            <span className={classes.badge}>active member</span>
           </td>
-          <td>
-            <button type='button leave' onClick={toggleMembership}>
+          <td className={classes.button}>
+            <button
+              type='button'
+              className={classes.leave}
+              onClick={toggleMembership}
+            >
               Leave mission
             </button>
           </td>
         </>
       ) : (
         <>
-          <td>
-            <span className='badge inactive'>not a member</span>
+          <td className={classes.button}>
+            <span className={classes.inactive}>not a member</span>
           </td>
-          <td>
-            <button type='button join' onClick={toggleMembership}>
+          <td className={classes.button}>
+            <button
+              type='button'
+              className={classes.join}
+              onClick={toggleMembership}
+            >
               join mission
             </button>
           </td>
