@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { rocketActions } from '../../redux/rockets/rocketSlice';
+import classes from './rocket.module.css'
 
 const SingleRocket = ({ rocket }) => {
   const { id, name, description, testImage, reserved } = rocket;
@@ -10,14 +11,14 @@ const SingleRocket = ({ rocket }) => {
   };
 
   return (
-    <div className='rocket'>
-      <div className='rocket-img'>
+    <div className={classes.rocket}>
+      <div className={classes.image}>
         <img src={testImage} alt={name} />
       </div>
       <div className='rocket-desc'>
-        <h3>{name}</h3>
-        <p>
-          {reserved && <span className='badge'>Reserved </span>}
+        <h3 className={classes.title}>{name}</h3>
+        <p className={classes.description}>
+          {reserved && <span className={classes.badge}>Reserved </span>}
           {description}
         </p>
 
@@ -26,6 +27,7 @@ const SingleRocket = ({ rocket }) => {
             type='button'
             title='Cancel Reservation'
             onClick={toggleReservation}
+            className={classes.cancel}
           >
             cancel reservation
           </button>
@@ -34,6 +36,7 @@ const SingleRocket = ({ rocket }) => {
             type='button'
             title='Reserve Rocket'
             onClick={toggleReservation}
+            className={classes.reserve}
           >
             reserve rocket
           </button>

@@ -26,9 +26,6 @@ button {
   cursor: pointer;
 }
 
-img {
-  width: 40vw;
-}
 
 button.loading {
   opacity: 0.3;

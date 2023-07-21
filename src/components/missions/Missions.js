@@ -5,12 +5,16 @@ import SingleMission from './SingleMission';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const { missions } = useSelector((state) => state.missions);
+  const { missions, isLoading } = useSelector(
+    (state) => state.missions
+  );
 
   useEffect(() => {
     if (missions?.length !== 0) return;
     dispatch(fetchMissions());
   }, []);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <section className='missions'>

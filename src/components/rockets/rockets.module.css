@@ -1,0 +1,13 @@
+.rockets {
+  display: grid;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .rockets{
+    gap: 4rem;
+  }
+}
