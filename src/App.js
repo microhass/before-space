@@ -7,7 +7,7 @@ import Error from './components/Error';
 import './App.css';
 import Dragons from './components/dragons/Dragons';
 import Missions from './components/missions/Missions';
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 
 const App = () => (
   <BrowserRouter>

@@ -7,9 +7,8 @@
 ul {
   list-style-type: none;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   text-transform: capitalize;
-  margin-left: 3rem;
 }
 
 a:active,
