@@ -5,8 +5,8 @@ import Layout from './components/Layout';
 import Error from './components/Error';
 
 import './App.css';
-import Dragons from './components/Dragons';
-import Missions from './components/Missions';
+import Dragons from './components/dragons/Dragons';
+import Missions from './components/missions/Missions';
 
 const App = () => (
   <BrowserRouter>

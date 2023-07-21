@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchDragons } from '../redux/dragons/dragonSlice';
+import { fetchDragons } from '../../redux/dragons/dragonSlice';
 import { useEffect } from 'react';
 
 const Dragons = () => {
@@ -10,8 +10,8 @@ const Dragons = () => {
   useEffect(() => {
     if (dragons?.length !== 0) return;
     dispatch(fetchDragons());
-    console.log('fuck');
   }, []);
+  
   return <div>Dragons</div>;
 };
 

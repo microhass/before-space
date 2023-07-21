@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets } from '../redux/rockets/rocketSlice';
+import { fetchRockets } from '../../redux/rockets/rocketSlice';
 import { useEffect } from 'react';
+import SingleRocket from './SingleRocket';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,13 @@ const Rockets = () => {
     dispatch(fetchRockets());
   }, []);
 
-  return <div>Rockets</div>;
+  return (
+    <section className='rockets'>
+      {rockets.map((rocket) => (
+        <SingleRocket key={rocket.id} rocket={rocket} />
+      ))}
+    </section>
+  );
 };
 
 export default Rockets;

@@ -14,6 +14,10 @@ const Header = styled.header`
     font-size: 1.4rem;
   }
 
+  img {
+    width: 2rem;
+  }
+
   div, div > * {
     display: flex;
     justify-content: space-between;

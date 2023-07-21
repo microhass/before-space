@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missionSlice';
+import { fetchMissions } from '../../redux/missions/missionSlice';
 import { useEffect, useState } from 'react';
 
 const Missions = () => {

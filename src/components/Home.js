@@ -1,5 +1,5 @@
 import React from 'react';
-import Rockets from './Rockets';
+import Rockets from './rockets/Rockets';
 
 const Home = () => (
   <>
