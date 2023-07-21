@@ -16,14 +16,25 @@ const SingleRocket = ({ rocket }) => {
       </div>
       <div className='rocket-desc'>
         <h3>{name}</h3>
-        <p>{description}</p>
+        <p>
+          {reserved && <span className='badge'>Reserved </span>}
+          {description}
+        </p>
 
         {reserved ? (
-          <button type='button' onClick={toggleReservation}>
+          <button
+            type='button'
+            title='Cancel Reservation'
+            onClick={toggleReservation}
+          >
             cancel reservation
           </button>
         ) : (
-          <button type='button' onClick={toggleReservation}>
+          <button
+            type='button'
+            title='Reserve Rocket'
+            onClick={toggleReservation}
+          >
             reserve rocket
           </button>
         )}

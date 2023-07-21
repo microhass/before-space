@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../../redux/missions/missionSlice';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import SingleMission from './SingleMission';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,25 @@ const Missions = () => {
     dispatch(fetchMissions());
   }, []);
 
-  return <div>Missions</div>;
+  return (
+    <section className='missions'>
+      <table border={1}>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <SingleMission key={mission.id} mission={mission} />
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
 };
 
 export default Missions;

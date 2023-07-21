@@ -19,7 +19,16 @@ const initialState = {
 const missionSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleMissionMembership: (state, action) => {
+      const missionId = action.payload;
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.id !== missionId) return mission;
+        return { ...mission, isMember: !mission.isMember };
+      });
+      state.missions = updatedMissions;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.pending, (state) => {
       state.isLoading = true;
@@ -35,13 +44,13 @@ const missionSlice = createSlice({
           description,
         } = mission;
 
-        return { id, name, description };
+        return { id, name, description, isMember: false };
       });
       state.missions = missionsData;
     });
   },
 });
 
-export const rocketActions = missionSlice.actions;
+export const missionActions = missionSlice.actions;
 
 export default missionSlice;
