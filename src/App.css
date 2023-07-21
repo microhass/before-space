@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+  text-transform: capitalize;
+  margin-left: 3rem;
+}
+
+a:active,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+img {
+  width: 2rem;
+}
+
+button.loading {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
