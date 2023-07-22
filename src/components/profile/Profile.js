@@ -13,19 +13,6 @@ const Profile = () => {
 
   return (
     <section className={classes.profile}>
-      {/* <div className='profile-missions'>
-        <h3 className={classes.title}>my missions</h3>
-        <ul className={classes.list}>
-          {myMissions.length === 0 && (
-            <li className={classes.item}>no missions joined</li>
-          )}
-
-          {myMissions.map((mission) => (
-            <MyMission key={mission.id} mission={mission} />
-          ))}
-        </ul>
-      </div> */}
-
       <Template
         category={'rocket'}
         categoryArray={myRockets}
@@ -37,7 +24,7 @@ const Profile = () => {
         categoryArray={myDragons}
         verb={'reserved'}
       />
-      
+
       <Template
         category={'mission'}
         categoryArray={myMissions}

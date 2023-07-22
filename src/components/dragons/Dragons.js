@@ -16,7 +16,7 @@ const Dragons = () => {
     dispatch(fetchDragons());
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className='loading'>Loading...</div>;
 
   return (
     <section className={classes.dragons}>

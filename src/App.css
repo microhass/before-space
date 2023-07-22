@@ -29,8 +29,10 @@ button {
   cursor: pointer;
 }
 
-
-button.loading {
-  opacity: 0.3;
-  cursor: not-allowed;
+.loading {
+  height: 40vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
 }

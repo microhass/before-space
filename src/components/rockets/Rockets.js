@@ -16,7 +16,7 @@ const Rockets = () => {
     dispatch(fetchRockets());
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className='loading'>Loading...</div>;
 
   return (
     <section className={classes.rockets}>
