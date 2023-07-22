@@ -5,6 +5,10 @@ import { NavLink } from 'react-router-dom';
 import userImage from '../images/user.png';
 const links = [
   {
+    name: 'dragons',
+    href: '/dragons',
+  },
+  {
     name: 'rockets',
     href: '/rockets',
   },

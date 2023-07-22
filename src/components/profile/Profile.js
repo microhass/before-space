@@ -1,18 +1,19 @@
 import { useSelector } from 'react-redux';
 import classes from './profile.module.css';
-import MyMission from './MyMissions';
-import MyRocket from './MyRockets';
+import Template from './Template';
 
 const Profile = () => {
   const { missions } = useSelector((state) => state.missions);
   const { rockets } = useSelector((state) => state.rockets);
+  const { dragons } = useSelector((state) => state.dragons);
 
   const myMissions = missions.filter((mission) => mission.isMember);
   const myRockets = rockets.filter((rocket) => rocket.reserved);
+  const myDragons = dragons.filter((dragon) => dragon.reserved);
 
   return (
     <section className={classes.profile}>
-      <div className='profile-missions'>
+      {/* <div className='profile-missions'>
         <h3 className={classes.title}>my missions</h3>
         <ul className={classes.list}>
           {myMissions.length === 0 && (
@@ -23,9 +24,27 @@ const Profile = () => {
             <MyMission key={mission.id} mission={mission} />
           ))}
         </ul>
-      </div>
+      </div> */}
 
-      <div className='profile-rockets'>
+      <Template
+        category={'rocket'}
+        categoryArray={myRockets}
+        verb={'reserved'}
+      />
+
+      <Template
+        category={'dragon'}
+        categoryArray={myDragons}
+        verb={'reserved'}
+      />
+      
+      <Template
+        category={'mission'}
+        categoryArray={myMissions}
+        verb={'joined'}
+      />
+
+      {/* <div className='profile-rockets'>
         <h3 className={classes.title}>my rockets</h3>
         <ul className={classes.list}>
           {myRockets.length === 0 && (
@@ -35,7 +54,7 @@ const Profile = () => {
             <MyRocket key={rocket.id} rocket={rocket} />
           ))}
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };

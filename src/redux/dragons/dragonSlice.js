@@ -4,7 +4,6 @@ import axios from 'axios';
 const dragonsURL = 'http://localhost:8000/space/dragons';
 import testImage from './../../images/hack-4.jpg';
 
-
 export const fetchDragons = createAsyncThunk(
   'dragons/fetch',
   async () => {
@@ -21,7 +20,16 @@ const initialState = {
 const dragonSlice = createSlice({
   name: 'dragons',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleDragonReservation: (state, action) => {
+      const dragonId = action.payload;
+      const newDragon = state.dragons.map((dragon) => {
+        if (dragon.id !== dragonId) return dragon;
+        return { ...dragon, reserved: !dragon.reserved };
+      });
+      state.dragons = newDragon;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchDragons.pending, (state) => {
       state.isLoading = true;
@@ -33,7 +41,14 @@ const dragonSlice = createSlice({
       const dragonsData = res.map((dragon) => {
         const { id, name, type, flickr_images: images } = dragon;
 
-        return { id, name, type, image: images[0], testImage };
+        return {
+          id,
+          name,
+          type,
+          image: images[0],
+          testImage,
+          reserved: false,
+        };
       });
       state.dragons = dragonsData;
     });
