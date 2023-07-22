@@ -1,12 +1,13 @@
 .missions {
   max-width: 1200px;
-  min-width: 800px;
   margin: 1rem auto;
   padding: 1rem;
+  overflow-x: scroll;
 }
 
 .table {
   background-color: #000;
+  min-width: 800px;
 }
 
 .tableRow > th,

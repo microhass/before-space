@@ -18,7 +18,12 @@ const Header = styled.header`
     width: 2rem;
   }
 
-  div, div > * {
+  nav {
+    color: #007bff;
+  }
+
+  div,
+  div > * {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,6 +31,7 @@ const Header = styled.header`
 
   @media (min-width: 1000px) {
     margin: 2rem auto 0;
+    font-size: 1.1rem;
   }
 `;
 

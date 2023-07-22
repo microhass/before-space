@@ -18,6 +18,10 @@ a:link {
   color: inherit;
 }
 
+a.active {
+  text-decoration: underline;
+}
+
 button {
   border: none;
   background-color: inherit;

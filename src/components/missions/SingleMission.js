@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { missionActions } from '../../redux/missions/missionSlice';
 import classes from './missions.module.css';
 
+
 const SingleMission = ({ mission }) => {
   const { id, name, description, isMember } = mission;
   const dispatch = useDispatch();
@@ -9,6 +10,7 @@ const SingleMission = ({ mission }) => {
   const toggleMembership = () => {
     dispatch(missionActions.toggleMissionMembership(id));
   };
+
 
   return (
     <tr className={classes.tableRow}>

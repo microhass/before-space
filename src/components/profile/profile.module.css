@@ -23,7 +23,10 @@
 
 .item {
   background-color: #fff;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .item:last-child {
@@ -36,7 +39,18 @@
   border-top-right-radius: 4px;
 }
 
-@media screen and (max-width: 600px) {
+.leave {
+  margin-left: auto;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  border: 1px solid red;
+  color: red;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.6px;
+}
+
+@media screen and (max-width: 768px) {
   .profile {
     grid-template-columns: 1fr;
   }
@@ -52,6 +66,6 @@
 
   .item {
     font-size: 1.1rem;
-    padding: 0.8rem;
+    padding: 0.8rem 1.2rem;
   }
 }

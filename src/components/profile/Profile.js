@@ -1,44 +1,39 @@
 import { useSelector } from 'react-redux';
 import classes from './profile.module.css';
+import MyMission from './MyMissions';
+import MyRocket from './MyRockets';
 
 const Profile = () => {
   const { missions } = useSelector((state) => state.missions);
   const { rockets } = useSelector((state) => state.rockets);
+
+  const myMissions = missions.filter((mission) => mission.isMember);
+  const myRockets = rockets.filter((rocket) => rocket.reserved);
 
   return (
     <section className={classes.profile}>
       <div className='profile-missions'>
         <h3 className={classes.title}>my missions</h3>
         <ul className={classes.list}>
-          {missions.map((mission) => {
-            const { id, name, isMember } = mission;
-            if (isMember) {
-              return (
-                <li
-                  key={id}
-                  className={classes.item}
-                >
-                  {name}
-                </li>
-              );
-            }
-          })}
+          {myMissions.length === 0 && (
+            <li className={classes.item}>no missions joined</li>
+          )}
+
+          {myMissions.map((mission) => (
+            <MyMission key={mission.id} mission={mission} />
+          ))}
         </ul>
       </div>
 
       <div className='profile-rockets'>
         <h3 className={classes.title}>my rockets</h3>
         <ul className={classes.list}>
-          {rockets.map((rocket) => {
-            const { id, name, reserved } = rocket;
-            if (reserved) {
-              return (
-                <li key={id} className={classes.item}>
-                  {name}
-                </li>
-              );
-            }
-          })}
+          {myRockets.length === 0 && (
+            <li className={classes.item}>no rockets reserved</li>
+          )}
+          {myRockets.map((rocket) => (
+            <MyRocket key={rocket.id} rocket={rocket} />
+          ))}
         </ul>
       </div>
     </section>

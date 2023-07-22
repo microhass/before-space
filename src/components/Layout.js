@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Header from './styles/styledHeader';
+import { NavLink } from 'react-router-dom';
 import userImage from '../images/user.png';
 const links = [
   {
@@ -30,7 +31,14 @@ const Layout = () => (
         <ul>
           {links.map((link) => (
             <li key={link.name}>
-              <Link to={link.href}>{link.name}</Link>
+              <NavLink
+                to={link.href}
+                className={({ isActive }) =>
+                  isActive ? 'active' : ''
+                }
+              >
+                {link.name}
+              </NavLink>
             </li>
           ))}
         </ul>
